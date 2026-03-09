@@ -58,6 +58,80 @@ print("\"Yes,\" they said")
 print('"Isn\'t," they said.')
 print()
 
+# escape characters work as expected
+print('First line.\nSecond line.')
+print('C:\this\name')
+print(r'C:\this\name')
+print()
+
+# string literals are like [[]] in lua and can span multiple lines
+print('''
+Usage; thingy [OPTIONS]
+  -h
+  -H hostname
+''')
+print()
+
+# strings can be concat'd with '+' and repeated with '*'
+print(3 * 'un' + 'ium')
+
+# two or more string literals next to each other are automatically concatenated
+print('py'    'thon')
+# even with breaking up long strings
+print('Put several strings within parentheses '
+'to have them joined together.') # only works with literals
+
+print()
+
+# in python there are no characters, just strings of size one
+word = 'Python'
+print(word[0])
+print(word[5])
+print()
+
+# neg indices start from the end
+print(word[-1])
+print(word[-2])
+print(word[-6])
+
+# -0 is the same as 0, so negs indexes start with -1 not -0
+print(word[-0])
+print()
+
+# slicing is also supported to get substrings
+print(word[0:2])
+print(word[2:5])
+print()
+
+# slice indices defaults when omitting first, second, or both indexes
+print(word[:2])
+print(word[4:])
+print(word[-2:])
+print(word[:])
+print()
+
+print(word[:2]+word[2:])
+print(word[:4] + word[4:])
+print()
+
+# out of range index throw errors, but with ranges they are simply returned as ''
+# print(word[42])
+print(word[4:42])
+print(word[42:])
+
+# python strings are immutable
+# word[0] = 'J' # Error 'str' object doesn't support item assignment
+
+# we need to create a new one
+print('J' + word[1:])
+print(word[:2] + 'py')
+
+# built-in function len() returns the length of a string
+s = 'supercalifragilisticexpialidocious'
+print(len(s))
+
+# 3.1.3 LISTS
+
 
 
 
