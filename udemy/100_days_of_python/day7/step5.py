@@ -45,7 +45,7 @@ import hangman_words
 # TODO-13 - import the logo from hangman_art.py and print it at the start of the game
 
 # TODO-14 - if the user has entered a letter they already guessed, print the letter and let
-#   let them knkow.
+#   let them know.
 
 # TODO-15 - if the user chooses a letter not in the chosen-word, let them know and that they lost
 #   a life
@@ -53,7 +53,7 @@ import hangman_words
 # TODO-16 - Update the message telling the user how many lives they have left
 
 
-chosen_word = random.choice(hangman_words.word_list)
+chosen_word: str = random.choice(hangman_words.word_list)
 lives = 6
 placeholder = "_" * len(chosen_word)
 print(chosen_word)
@@ -68,12 +68,19 @@ correct_letters: list[str] = (
 print(hangman_art.logo)
 
 while not game_over:
+
+    print(
+        f"******************************** {lives}/6 LIVES LEFT **************************************"
+    )
     guess = input("Guess a letter: ").lower()
     # correct = guess in chosen_word
     display = ""
 
     if guess not in chosen_word:
+        print("That letter isn't in the word. You've lost one life")
         lives -= 1
+    elif guess in correct_letters:
+        print(f"You've already chosen the letter: {guess}")
 
     for letter in chosen_word:
         if letter == guess:
