@@ -1,6 +1,6 @@
-# conditional.2.py
 late = False
 if late:
-    print("I need to call my manager!")  # 1
+    print("I need to call my manager!")
 else:
-    print("no need to call my manager...")  # 2
+    print('no need to call my manager...')
+        

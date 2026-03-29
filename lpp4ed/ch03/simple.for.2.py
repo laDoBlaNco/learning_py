@@ -1,5 +1,7 @@
-# simple.for.2.py
-surnames = ["Rivest", "Shamir", "Adleman"]
+# iterating over a sequence
+surnames=["Whiteside","Lorenzo","Corporan"]
+
 for position in range(len(surnames)):
-    print(position, surnames[position])
-    # print(surnames[position][0], end='')  # try swapping prints
+    print(position,surnames[position])
+    
+
