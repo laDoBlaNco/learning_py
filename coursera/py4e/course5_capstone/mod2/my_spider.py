@@ -1,4 +1,4 @@
-# spider.py
+# my_spider.py
 
 import sqlite3
 import ssl
@@ -12,7 +12,7 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-conn = sqlite3.connect("spider.sqlite")
+conn = sqlite3.connect("my_spider.sqlite")
 cur = conn.cursor()
 
 cur.execute("""create table if not exists Pages
@@ -34,7 +34,7 @@ if row is not None:
 else:
     starturl = input("Enter web url or enter: ")
     if len(starturl) < 1:
-        starturl = "http://www.dr-chuck.com"
+        starturl = "https://www.dr-chuck.com"
     if starturl.endswith("/"):
         starturl = starturl[:-1]
     web = starturl
@@ -72,7 +72,7 @@ while True:
     )
     try:
         row = cur.fetchone()
-        # print row
+        print(row)
         fromid = row[0]
         url = row[1]
     except:  # noqa: E722
