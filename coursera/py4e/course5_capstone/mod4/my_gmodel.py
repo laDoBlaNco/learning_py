@@ -199,7 +199,7 @@ for message_row in cur_1:
     guid_id = guids.get(guid,None)
 
     if sender_id is None:
-        cur.execute('insert or ignore into senders(sender) valus(?)',(sender,))
+        cur.execute('insert or ignore into senders(sender) values(?)',(sender,))
         conn.commit()
         cur.execute('select id from senders where sender=? limit 1',(sender,))
         try:
